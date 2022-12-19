@@ -1,5 +1,3 @@
 {
-    "dependencies" : {
-        "composer": "latest"
-    }
+    "composer": "latest"
 }
