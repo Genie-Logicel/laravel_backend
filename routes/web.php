@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoadingController;
+use App\Http\Controllers\SmsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('/loading' , [LoadingController::class , 'index'])->name('loading');
+Route::get('/sms' , [SmsController::class , 'index']);
