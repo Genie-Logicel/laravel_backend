@@ -1,5 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EtudesController;
+use App\Http\Controllers\AutreCompetencesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('etude', EtudesController::class);
+Route::resource('autre-competence', AutreCompetencesController::class);

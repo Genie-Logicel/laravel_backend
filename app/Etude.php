@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Etude extends Model
 {
-    use HasFactory;
+    use HasFactory;  
+    protected $fillable = ['domaine', 'niveau', 'institution'];
 }

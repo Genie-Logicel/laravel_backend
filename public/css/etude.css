@@ -1,0 +1,119 @@
+
+.btn-create,
+.btn-edit,
+.btn-delete,
+.btn-view {
+    width: 45px;
+    height: 45px;
+    border-radius: 100px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    font-weight: 100;
+}
+
+.btn-create,
+.btn-view {
+    font-size: 16px;
+    margin-top: 10px;
+}
+.btn-edit,
+.btn-delete {
+    font-size: 12px;
+}
+.btn-edit:hover,
+.btn-delete:hover{  
+    height: auto;
+    width: auto;
+    border-radius: 5px;
+}
+.btn-create:hover,
+.btn-view:hover{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.btn-create:hover{
+    border: 1px solid #5cb85c;
+}
+.btn-view:hover{
+    border: 1px solid #337ab7;
+}
+.btn-delete:hover{    
+    border: 1px solid #d9534f;
+}
+.btn-edit:hover{    
+    border: 1px solid #f0ad4e;
+}
+.btn-create:hover .text-create,
+.btn-edit:hover .text-edit,
+.btn-delete:hover .text-delete,
+.btn-view:hover .text-view{
+    display: inline-block;
+}
+.btn-create .text-create,
+.btn-edit .text-edit,
+.btn-delete .text-delete,
+.btn-view .text-view {
+    display: none;
+    margin-left: 10px;
+}
+.table-action {
+    display: flex;
+    justify-content: space-between;
+}
+.alert.alert-success p,
+.alert.alert-danger p{
+    align-items: center;
+    display: flex;
+    gap: 30px;
+}
+.alert.alert-success p i,
+.alert.alert-danger p i{
+    font-size: 30px;
+}
+.alert.alert-success p i:after,
+.alert.alert-success p i:after {
+    content: "";
+    width: 2px;
+    height: 45PX;
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    background-color: #3c763dab;
+}
+.alert.alert-success p i:after{
+    background-color: #3c763dab;
+}
+.alert.alert-danger p i:after{
+    background-color: #d9534fab;
+}
+nav.flex.items-center.justify-between {
+    border-top: 2px solid #70707057;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.flex.justify-between.flex-1.sm\:hidden {
+    justify-content: space-between;
+    display: flex;
+}
+.form-group .alert-danger {
+    background-color:initial;
+    border: initial;
+    padding: 0;
+    font-size: 12px;
+    color:red;
+    margin-bottom: 15px;
+}
+span.cursor-default.leading-5,
+a.leading-5.rounded-md{
+    background-color: #585858;
+    padding: 5px 15px;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+a.leading-5.rounded-md:hover{
+    background-color: #337ab7;
+}

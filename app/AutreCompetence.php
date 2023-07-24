@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class AutreCompetence extends Model
 {
-    use HasFactory;
+    use HasFactory;  
+    protected $fillable = ['nom', 'description'];
 }
