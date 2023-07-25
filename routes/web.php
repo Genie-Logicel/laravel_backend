@@ -1,13 +1,11 @@
 <?php
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
+
 use App\Http\Controllers\CompetenceController;
 use App\Http\Controllers\RoleController;
-=======
 use App\Http\Controllers\EtudesController;
 use App\Http\Controllers\AutreCompetencesController;
 
->>>>>>> a7343159cd8675183f4d89e49895cb4166551f27
 /*
 |--------------------------------------------------------------------------
 | Web Routes
