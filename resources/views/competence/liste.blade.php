@@ -2,55 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Competence</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Liste compétence</title>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}" >
+    <link rel="stylesheet" href="{{ asset('css/etude.css') }}" >
 </head>
 <body>
-    
-    <div class="container" >
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-lg-12 margin-tb">
+                <div class="pull-left">
+                    <h2>Liste  compétences enregistrer</h2>
+                </div>
+                <div class="pull-right mb-2">
+                    <a class="btn btn-success btn-create" href="{{ route('add_competence') }}">
+                        <i class="fa fa-plus"></i>
+                        <span class="text-create">Nouvelle compétence</span>
+                    </a>
+                </div>
+            </div>
+        </div>
         @if(Session::has('success'))
-        <div class="alert alert-primary alert-dismissible" role="alert">
+        <div class="alert alert-primary alert-dismissible" competence="alert">
             {{Session::get('success')}}
             
         </div>
         @endif
-        <div> 
-            <a href="{{route('add_competence')}}">AJOUTER COMPETENCE</a>
-        </div><br>
-        <div class="row">
-
-        <div class="d-flex flex-wrap" id="icons-container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th style="width: 170px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($competences as $com)
+                    <tr>
+                        <td>{{ $com->id }}</td>
+                        <td>{{ $com->nom }}</td>
+                        <td>{{ $com->description }}</td>
+                        <td>
+                            <a  class="btn btn-warning btn-edit" href="{{ route('delete_competence',['id'=>$com->id])}}" onclick="return confirm('Voulez-vous supprimer?')"> <i class="fa fa-trash-o"></i></a>
+                            <a class="btn btn-danger btn-delete" href="{{ route('edit_competence',['id'=>$com->id])}}" onclick="return confirm('Voulez-vous modifier?')"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                    @endforeach
+            </tbody>
+        </table>
        
-        
-        @foreach($competences as $dep)
-        
-            <div class="card icon-card  text-center mb-4 mx-4">
-                <div class="card-body">
-                    
-                    <i class="bx bxl-bitcoin mb-2"></i>
-                    <p class="icon-name text-capitalize text-truncate mb-0">{{$dep->nom}}</p>
-                    
-                    <p class="icon-name text-capitalize text-truncate mb-0">{{$dep->description}}</p>
-                    <a class="dropdown-item" href="{{ route('delete_competence',['id'=>$dep->id])}}" onclick="return confirm('Voulez-vous supprimer?')"><i style="color:#ff3e1d !important">Supprimer</i> </a>
-                    <a class="dropdown-item" href="{{ route('edit_competence',['id'=>$dep->id])}}" onclick="return confirm('Voulez-vous modifier?')"><i style="color:#03c3ec !important">Modifier</i></a>
-                    
-                </div>
-            </div>
-            
-        @endforeach
-        <br>
-                       
-                        
-                    </div>
-        </div>
-         
     </div>
-</div>
-
-</div>
-    </div>
-    
 </body>
 </html>

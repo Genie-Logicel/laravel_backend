@@ -45,7 +45,7 @@ class RoleController extends Controller
       
        return view('role.edit',
          [
-           'com'=> $com,
+           'role'=> $com,
           
          ]);
     }

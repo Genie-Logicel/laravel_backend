@@ -2,22 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Competence</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Liste autre compétence</title>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}" >
+    <link rel="stylesheet" href="{{ asset('css/etude.css') }}" >
 </head>
 <body>
     
-    <div class="container" style="position: relative;margin-top: 10%;margin-right: -9%;">
+<div class="container mt-2">
         <div class="row">
-           
-            <div class="col-xxl">
-                <div class="card mb-4">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                    <h5 class="mb-0">modifier competence</h5>
-                
+            <div class="row">
+                <div class="col-lg-12 margin-tb">
+                    <div class="pull-left mb-2">
+                        <h2>Modifier compétence</h2>
+                    </div>
+                    <div class="pull-right">
+                        <a class="btn btn-primary btn-view" href="{{route('liste_competence') }}"> 
+                            <i class="fa fa-list-alt"></i>
+                            <span class="text-view">Aller à la liste</span>
+                        </a>
+                    </div>
                 </div>
+            </div>
                 @if(Session::has('success'))
                 <div class="alert alert-primary alert-dismissible" role="alert">
                     {{Session::get('success')}}
@@ -27,29 +33,31 @@
             <div class="card-body">
             <form method="post" action="{{ route('competence.submit',[ 'id' =>$com->id ])}}">
             @csrf
-                <div class="form-group">
-                    <label for="nom">Nom compentence</label>
-                    <input type="nom" name="nom" value="{{$com->nom}}" class="form-control"  >
-                    @if ($errors->has('nom'))
-                    <small class="form-text text-muted">  {{$errors->first('nom')}}</small>
-                    @endif
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Nom</strong>
+                        <input type="nom" name="nom" value="{{$com->nom}}" class="form-control"  >
+                        @if ($errors->has('nom'))
+                        <div class="alert alert-danger mt-1 mb-1">   {{$errors->first('nom')}}</div>
+                        @endif
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="description">description compentence</label>
-                    <input type="description" name="description" class="form-control"  value="{{$com->description}}">
-                    @if ($errors->has('description'))
-                    <small class="form-text text-muted">  {{$errors->first('description')}}</small>
-                    @endif
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Description</strong>
+                        <input type="description" name="description" class="form-control"  value="{{$com->description}}">
+                        @if ($errors->has('description'))
+                        <div class="alert alert-danger mt-1 mb-1">    {{$errors->first('description')}}</div>
+                        @endif
                 </div>
-                <button type="submit" class="btn btn-primary">Modifier</button>
-                <a href="{{route('liste_competence')}}">liste</button>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <button type="submit" class="btn btn-success ml-3"><i class="fa fa-spinner"></i> Modifier</button>
+                </div>
             </form>
-            </div>
+        </div>
     </div>
-</div>
 
-</div>
-    </div>
     
 </body>
 </html>
