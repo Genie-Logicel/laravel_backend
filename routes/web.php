@@ -5,6 +5,7 @@ use App\Http\Controllers\CompetenceController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\EtudesController;
 use App\Http\Controllers\AutreCompetencesController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,9 @@ use App\Http\Controllers\AutreCompetencesController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// * login
+Route::get('/login',  [LoginController::class, 'login' ])->name('login');
 
 
 //competence
