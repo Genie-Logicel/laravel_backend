@@ -5,6 +5,7 @@ use App\Http\Controllers\CompetenceController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\EtudesController;
 use App\Http\Controllers\AutreCompetencesController;
+use App\Http\Controllers\FormationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +42,15 @@ Route::post('/edit_role/{id}',  [RoleController::class, 'role_submit' ])->name('
 
 Route::resource('etude', EtudesController::class);
 Route::resource('autre-competence', AutreCompetencesController::class);
+
+//formation 
+Route::get('/add_formation',  [FormationController::class, 'add_formation' ])->name('add_formation');
+Route::post('/add_formation',  [FormationController::class, 'add_formation_submit' ])->name('add.formation.submit');
+Route::get('/liste_formation',  [FormationController::class, 'liste_formation' ])->name('liste_formation');
+Route::get('/delete_formation/{id}',  [FormationController::class, 'delete_formation' ])->name('delete_formation');
+Route::get('/edit_formation/{id}',  [FormationController::class, 'edit_formation' ])->name('edit_formation');
+Route::post('/edit_formation/{id}',  [FormationController::class, 'update' ])->name('formation.submit');
+
+
+
 
