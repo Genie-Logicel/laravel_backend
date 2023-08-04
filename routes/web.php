@@ -22,6 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// * login
+Route::get('/login',  [LoginController::class, 'login' ])->name('login');
+
 
 //competence
 Route::get('/add_competence',  [CompetenceController::class, 'add_competence' ])->name('add_competence');
