@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompetenceController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\FormationController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('/competence', CompetenceController::class);
 Route::resource('/role', RoleController::class);
+//Route::resource('/formation',FormationController::class);
